@@ -4,6 +4,7 @@
 	"MAX_EPOCH": 100, 
 	"LEARNING_RATE": 0.025, 
 	"BATCH_SIZE": 128, 
-	"BACK_END": "th"
+	"BACK_END": "th",
+	"MAX_EPOCH": 15
 }
 
