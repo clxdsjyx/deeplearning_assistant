@@ -1,0 +1,9 @@
+{
+	"LOSS": "mse", 
+	"OPTIMIZER": "sgd", 
+	"MAX_EPOCH": 100, 
+	"LEARNING_RATE": 0.025, 
+	"BATCH_SIZE": 128, 
+	"BACK_END": "th"
+}
+
