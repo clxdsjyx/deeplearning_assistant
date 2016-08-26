@@ -5,9 +5,23 @@ from keras.preprocessing.image import Iterator
 # https://github.com/fchollet/keras/blob/master/keras/preprocessing/image.py
 class SimpleIterator(Iterator):
 
-	def __init__(self, data, batch_size, shuffle = True, seed = None):
-		self.data = data
-		
+	def __init__(self, batch_size, shuffle = True, seed = None):
+		# Data generation for this simple example.
+		# Our Neural Network will be trained to predict the XOR operation for two arrays.
+		from random import random
+		data = []
+		for i in xrange(10000):
+			x = [0] * 10
+			y = [0] * 5
+
+			for j in xrange(5):
+				x[j] =int(random() + 0.5)
+				x[5 + j] =int(random() + 0.5)
+				y[j] = x[j]^x[5 + j]	# Generate label for XOR operation.
+
+			data.append((np.array(x), np.array(y)))
+
+		self.data = data		
 		N = len(data)
 
 		super(SimpleIterator, self).__init__(N, batch_size, shuffle, seed)
