@@ -47,4 +47,4 @@ if __name__ == "__main__":
 	# Pass model builder with training iterator and test iterator
 	# In this example, we just use same iterator for training iterator and test iterator. 
 	# However, note that you need separate two data-set (iterator) in real implementation!!
-	assistant.train(mb, iterator, iterator)
+	assistant.train(mb, iterator, iterator, verbose = 2)
