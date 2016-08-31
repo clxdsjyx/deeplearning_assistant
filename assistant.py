@@ -67,7 +67,7 @@ class DeepLearningAssistant:
 				callbacks = callbacks
 				)
 
-		return history
+		return model
 	
 	def test(self):
 		pass
