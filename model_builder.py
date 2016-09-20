@@ -1,4 +1,5 @@
 import numpy as np
+from os import path
 
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Dropout
