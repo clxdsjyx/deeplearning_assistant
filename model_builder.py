@@ -9,10 +9,12 @@ class AbstractModelBuilder:
 
 	def __init__(self, weights_path = None):
 		self.weights_path = weights_path
+		self.model = None
 
 	def getModel(self):
 		weights_path = self.weights_path
-		model = self.buildModel()
+		if self.model == None:
+			self.model = self.buildModel()
 
 		if weights_path and path.isfile(weights_path):
 			try:
@@ -20,7 +22,7 @@ class AbstractModelBuilder:
 			except Exception, e:
 				print e
 
-		return model
+		return self.model
 
 	# You need to override this method.
 	def buildModel(self):
